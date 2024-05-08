@@ -65,11 +65,13 @@ const phones = [
     },
 
 ]
+
+const arr = []
 const div = document.querySelector(`.container`)
 
 function renderCards() {
     for (let i = 0; i < phones.length; i++) {
-        console.log(phones[i]);
+        // console.log(phones[i]);
         div.innerHTML += `
         
         <div class="card" style="width: 18rem;">
@@ -79,7 +81,7 @@ function renderCards() {
     <p class="card-text">${phones[i].price}</p>
    <button onclick = addCart(${i}) class= "btn btn-danger">Add To Cart</button>
   </div>
-</div>
+  </div>
         
         `
     }
@@ -87,5 +89,16 @@ function renderCards() {
 renderCards()
 
 function addCart(index) {
-    console.log(`Add To Cart` , index);
+    // console.log(`Add To Cart` , phones[index]);
+
+    if (arr.push(phones[index])) {
+        console.log(`Item Added`);
+    }else{
+        arr.push(phones[index])
+    }
+
+}
+
+function showCart() {
+    window.location = `cart.html`
 }
