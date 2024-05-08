@@ -4,64 +4,64 @@ const phones = [
         model: 'S20',
         ram: 8,
         rom: 256,
-        camera: '20 megapixel',
-        price: 15000
+        camera: '20 MegaPixel',
+        price: 170999
     },
     {
         brand: 'Xiomi',
-        model: 'note10',
+        model: 'note 10',
         ram: 4,
         rom: 64,
-        camera: '10 megapixel',
-        price: 15000
+        camera: '10 MegaPixel',
+        price: 32000
     },
     {
         brand: 'Infinix',
-        model: 'z10',
-        ram: 2,
-        rom: 16,
-        camera: '5 megapixel',
-        price: 15000
+        model: 'Z10',
+        ram: 4,
+        rom: 32,
+        camera: '5 MegaPixel',
+        price: 35000
     },
     {
         brand: 'Tecno',
-        model: 'spark10',
-        ram: 12,
-        rom: 512,
-        camera: '25 megapixel',
-        price: 15000
+        model: 'Spark 10',
+        ram: 8,
+        rom: 128,
+        camera: '25 MegaPixel',
+        price: 34000
     },
     {
         brand: 'Iphone',
-        model: '14',
-        ram: 4,
-        rom: 1024,
-        camera: '30 megapixel',
-        price: 15000
+        model: '14 max',
+        ram: 12,
+        rom: 512,
+        camera: '30 MegaPixel',
+        price: 150000
     },
     {
         brand: 'Oppo',
         model: 'F11',
-        ram: 8,
-        rom: 256,
-        camera: '20 megapixel',
-        price: 15000
+        ram: 6,
+        rom: 128,
+        camera: '20 MegaPixel',
+        price: 25000
     },
     {
         brand: 'Vivo',
-        model: 'y20',
+        model: 'Y20',
         ram: 4,
         rom: 64,
-        camera: '8 megapixel',
+        camera: '8 MegaPixel',
         price: 15000
     },
     {
         brand: 'Samsung',
-        model: 's50',
-        ram: 50,
-        rom: 1024,
-        camera: '60 megapixel',
-        price: 300000
+        model: 'S20 Ultra',
+        ram: 8,
+        rom: 256,
+        camera: '60 MegaPixel',
+        price: 512000
     },
 
 ]
@@ -76,9 +76,10 @@ function renderCards() {
         
         <div class="card" style="width: 18rem;">
   <div class="card-body">
-    <h5 class="card-title">${phones[i].brand}</h5>
-    <h6 class="card-subtitle mb-2 text-body-secondary">${phones[i].model}</h6>
-    <p class="card-text">${phones[i].price}</p>
+    <h4 class="card-title text-center mb-3">${phones[i].brand} ${phones[i].model}</h4>
+    <p class="card-text"><b>Price :</b> ${phones[i].price}</p>
+    <p class="card-text"><b>Memory :</b> ${phones[i].rom}GB ROM / ${phones[i].ram}GB RAM</p>
+    <p class="card-text mb-4"><b>Camera :</b> ${phones[i].camera}</p>
    <button onclick = addCart(${i}) class= "btn btn-danger">Add To Cart</button>
   </div>
   </div>
@@ -89,13 +90,7 @@ function renderCards() {
 renderCards()
 
 function addCart(index) {
-    // console.log(`Add To Cart` , phones[index]);
-
-    if (arr.push(phones[index])) {
-        console.log(`Item Added`);
-    }else{
-        arr.push(phones[index])
-    }
+    console.log(`Added To Cart` , phones[index]);
 
 }
 
