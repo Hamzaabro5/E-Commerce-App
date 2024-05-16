@@ -16,15 +16,15 @@ function renderCards(){
     <p class="card-text"><b>Price :</b> ${cartItems[i].price}</p>
     <p class="card-text"><b>Memory :</b> ${cartItems[i].rom}GB ROM / ${cartItems[i].ram}GB RAM</p>
     <p class="card-text mb-4"><b>Camera :</b> ${cartItems[i].camera}</p>
+    <p class="card-text mb-4"><b>Quantity :</b> ${cartItems[i].quantity}</p>
    <button onclick = deleteBtn() class= "btn btn-danger">Delete</button>
   </div>
   </div>
             `
         }
     }else{
-        console.log('cart item empty ha maalik')
         div.innerHTML = `
-        <h3 class="text-center">No Item Found...</h3>
+        <h3 class="text-center">Please First add some items in your cart...</h3>
         `
     }
 }
@@ -33,7 +33,12 @@ renderCards()
 
 function deleteBtn() {
 
-    
+    if(cartItems.includes(cartItems[index])){
+        cartItems[index].quantity - 1;
+    }else{
+        cartItems[index].quantity = 1;
+        // arr.pop(cartItems[index]);
+    }
 }
 
 
