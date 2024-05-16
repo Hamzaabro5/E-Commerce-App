@@ -17,6 +17,7 @@ function renderCards(){
     <p class="card-text mb-4"><b>Camera :</b> ${cartItems[i].camera}</p>
     <p class="card-text mb-4"><b>Quantity :</b> ${cartItems[i].quantity}</p>
    <button onclick = deleteBtn() class= "btn btn-danger">Delete</button>
+   <button onclick = addBtn() class= "btn btn-success">Add</button>
   </div>
   </div>
             `
@@ -38,4 +39,14 @@ function deleteBtn() {
         cartItems[index].quantity = 1;
         // arr.pop(cartItems[index]);
     }
+}
+
+function addBtn() {
+    if(arr.includes(cartItems[index])){
+        cartItems[index].quantity += 1;
+    }else{
+        cartItems[index].quantity = 1;
+        arr.push(cartItems[index]);
+    }
+    console.log(arr);
 }
