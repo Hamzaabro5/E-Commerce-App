@@ -1,7 +1,6 @@
 console.log('cart items');
 
 const cartItems = JSON.parse(localStorage.getItem('cartItems'));
-// console.log(cartItems)
 
 const div = document.querySelector('div');
 
@@ -40,11 +39,3 @@ function deleteBtn() {
         // arr.pop(cartItems[index]);
     }
 }
-
-
-// localStorage.setItem('kis naam sa krwana ha' , 'value stringify wali');
-
-// localStorage.getItem('kis item sa save krwaya ha');
-
-// JSON.stringify()
-// JSON.parse()
