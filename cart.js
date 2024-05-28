@@ -16,9 +16,10 @@ function renderCards(){
     <p class="card-text"><b>Price :</b> ${cartItems[i].price * cartItems[i].quantity}</p>
     <p class="card-text"><b>Memory :</b> ${cartItems[i].rom}GB ROM / ${cartItems[i].ram}GB RAM</p>
     <p class="card-text mb-4"><b>Camera :</b> ${cartItems[i].camera}</p>
-    <p class="card-text mb-4"><b>Quantity :</b> ${cartItems[i].quantity}</p>
-   <button onclick = deleteBtn() class= "btn btn-danger">Delete</button>
-   <button onclick = addBtn() class= "btn btn-success">Add</button>
+    <p class="card-text mb-4"><b>Quantity :</b> <button onclick="increaseItem()" class="text-white bg-success border-0 rounded-2">+</button> ${cartItems[i].quantity} <button onclick="decreaseItem()" class="text-white bg-danger border-0 rounded-2">-</button></p>
+    <div class=" d-flex justify-content-center">
+    <button onclick = deleteBtn() class= "btn btn-danger">Delete</button>
+    </div>
   </div>
   </div>
             `
@@ -32,7 +33,40 @@ function renderCards(){
 
 renderCards()
 
-function deleteBtn() {
+
+
+
+
+
+
+
+
+
+
+
+function increaseItem() {
+    for (let i = 0; i < cartItems.length; i++) {
+        if(cartItems[i].quantity === 0){
+            cartItems.splice(i , 1)
+        }else{
+            cartItems[i].quantity += 1;
+        }
+    }
+    renderCards()
+}
+
+
+
+
+
+
+
+
+
+
+
+
+function decreaseItem() {
 for (let i = 0; i < cartItems.length; i++) {
    
     if(cartItems[i].quantity === 0){
@@ -46,16 +80,21 @@ renderCards()
 
 }
 
-function addBtn() {
-    for (let i = 0; i < cartItems.length; i++) {
-        if(cartItems[i].quantity === 0){
-            cartItems.splice(i , 1)
-        }else{
-            cartItems[i].quantity += 1;
-        }
-    }
-    renderCards()
+
+
+
+
+
+
+function deleteBtn() {
+    
 }
+
+
+
+
+
+
 
 
 function deleteAll() {
