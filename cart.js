@@ -100,3 +100,11 @@ function deleteBtn() {
 function deleteAll() {
     div.innerHTML = ``
 }
+
+
+
+
+
+function backShop() {
+    window.location = `index.html`
+}
