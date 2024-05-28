@@ -67,13 +67,19 @@ const phones = [
 ]
 
 let arr;
+
 let items = JSON.parse(localStorage.getItem('cartItems'));
+
+
 if(items === null){
     arr = [];
 }else{
     arr = items;
 }
+
+
 const div = document.querySelector(`.container`)
+ 
 
 function renderCards() {
     for (let i = 0; i < phones.length; i++) {

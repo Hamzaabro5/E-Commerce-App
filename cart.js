@@ -5,6 +5,7 @@ const cartItems = JSON.parse(localStorage.getItem('cartItems'));
 const div = document.querySelector('div');
 
 function renderCards(){
+    div.innerHTML = ``
     if(cartItems != null && cartItems.length > 0){
         for(let i = 0; i < cartItems.length; i++){
             console.log(cartItems[i]);
@@ -32,21 +33,24 @@ function renderCards(){
 renderCards()
 
 function deleteBtn() {
-
-    if(cartItems.includes(cartItems[index])){
-        cartItems[index].quantity - 1;
+for (let i = 0; i < cartItems.length; i++) {
+   
+    if(cartItems[i].quantity === 0){
+        cartItems.splice(i , 1)
     }else{
-        cartItems[index].quantity = 1;
-        // arr.pop(cartItems[index]);
+        cartItems[i].quantity -= 1;
     }
+    renderCards()
+}
 }
 
 function addBtn() {
-    if(arr.includes(cartItems[index])){
-        cartItems[index].quantity += 1;
-    }else{
-        cartItems[index].quantity = 1;
-        arr.push(cartItems[index]);
+    for (let i = 0; i < cartItems.length; i++) {
+        if(cartItems[i].quantity === 0){
+            cartItems.splice(i , 1)
+        }else{
+            cartItems[i].quantity += 1;
+        }
     }
-    console.log(arr);
+    renderCards()
 }
