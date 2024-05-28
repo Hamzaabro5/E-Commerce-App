@@ -13,7 +13,7 @@ function renderCards(){
             <div class="card" style="width: 18rem;">
   <div class="card-body">
     <h4 class="card-title text-center mb-3">${cartItems[i].brand} ${cartItems[i].model}</h4>
-    <p class="card-text"><b>Price :</b> ${cartItems[i].price}</p>
+    <p class="card-text"><b>Price :</b> ${cartItems[i].price * cartItems[i].quantity}</p>
     <p class="card-text"><b>Memory :</b> ${cartItems[i].rom}GB ROM / ${cartItems[i].ram}GB RAM</p>
     <p class="card-text mb-4"><b>Camera :</b> ${cartItems[i].camera}</p>
     <p class="card-text mb-4"><b>Quantity :</b> ${cartItems[i].quantity}</p>
@@ -40,8 +40,10 @@ for (let i = 0; i < cartItems.length; i++) {
     }else{
         cartItems[i].quantity -= 1;
     }
-    renderCards()
 }
+
+renderCards()
+
 }
 
 function addBtn() {
@@ -53,4 +55,9 @@ function addBtn() {
         }
     }
     renderCards()
+}
+
+
+function deleteAll() {
+    div.innerHTML = ``
 }

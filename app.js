@@ -5,7 +5,7 @@ const phones = [
         ram: 8,
         rom: 256,
         camera: '20 MegaPixel',
-        price: 170999
+        price: 200000
     },
     {
         brand: 'Xiomi',
@@ -13,7 +13,7 @@ const phones = [
         ram: 4,
         rom: 64,
         camera: '10 MegaPixel',
-        price: 32000
+        price: 30000
     },
     {
         brand: 'Infinix',
@@ -21,7 +21,7 @@ const phones = [
         ram: 4,
         rom: 32,
         camera: '5 MegaPixel',
-        price: 35000
+        price: 30000
     },
     {
         brand: 'Tecno',
@@ -29,7 +29,7 @@ const phones = [
         ram: 8,
         rom: 128,
         camera: '25 MegaPixel',
-        price: 34000
+        price: 35000
     },
     {
         brand: 'Iphone',
@@ -61,7 +61,7 @@ const phones = [
         ram: 8,
         rom: 256,
         camera: '60 MegaPixel',
-        price: 512000
+        price: 500000
     },
 
 ]
