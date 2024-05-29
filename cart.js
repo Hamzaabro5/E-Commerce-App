@@ -16,9 +16,9 @@ function renderCards(){
     <p class="card-text"><b>Price :</b> ${cartItems[i].price * cartItems[i].quantity}</p>
     <p class="card-text"><b>Memory :</b> ${cartItems[i].rom}GB ROM / ${cartItems[i].ram}GB RAM</p>
     <p class="card-text mb-4"><b>Camera :</b> ${cartItems[i].camera}</p>
-    <p class="card-text mb-4"><b>Quantity :</b> <button onclick="increaseItem()" class="text-white bg-success border-0 rounded-2">+</button> ${cartItems[i].quantity} <button onclick="decreaseItem()" class="text-white bg-danger border-0 rounded-2">-</button></p>
+    <p class="card-text mb-4"><b>Quantity :</b> <button onclick="increaseItem(${i})" class="text-white bg-success border-0 rounded-2">+</button> ${cartItems[i].quantity} <button onclick="decreaseItem(${i})" class="text-white bg-danger border-0 rounded-2">-</button></p>
     <div class=" d-flex justify-content-center">
-    <button onclick = deleteBtn() class= "btn btn-danger">Delete</button>
+    <button onclick = deleteBtn(${i}) class= "btn btn-danger">Delete</button>
     </div>
   </div>
   </div>
@@ -44,14 +44,17 @@ renderCards()
 
 
 
-function increaseItem() {
-    for (let i = 0; i < cartItems.length; i++) {
-        if(cartItems[i].quantity === 0){
-            cartItems.splice(i , 1)
-        }else{
-            cartItems[i].quantity += 1;
-        }
-    }
+function increaseItem(i) {
+    // for (let i = 0; i < cartItems.length; i++) {
+    //     if(cartItems[i].quantity === 0){
+    //         cartItems.splice(i , 1)
+    //     }else{
+    //         cartItems[i].quantity += 1;
+    //     }
+    // }
+
+    div.innerHTML = ``;
+    cartItems[i].quantity +=1 
     renderCards()
 }
 
@@ -66,19 +69,19 @@ function increaseItem() {
 
 
 
-function decreaseItem() {
-for (let i = 0; i < cartItems.length; i++) {
-   
-    if(cartItems[i].quantity === 0){
-        cartItems.splice(i , 1)
+function decreaseItem(i) {
+    div.innerHTML = ''
+    if(cartItems[i].quantity <= 1){
+        cartItems.splice(i , 1);
+
     }else{
-        cartItems[i].quantity -= 1;
+        cartItems[i].quantity -= 1
     }
-}
-
-renderCards()
+    renderCards()
 
 }
+
+// renderCards()
 
 
 
